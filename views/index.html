@@ -1,40 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Datbase Dump</title>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css" />
+  <title>Datbase Dump</title>
 
-    <!-- import jquery-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- import the webpage's stylesheet -->
+  <link rel="stylesheet" href="/style.css" />
 
-    <!-- import the webpage's client-side javascript file -->
-    <script href="/client.js" defer></script>
-  </head>
-  <body>
-   <h1>Database Dump</h1>
-    <table style="width:100%" id="databaseInfo">
-        <tr>
-            <th>INum</th>
-            <th>IPage</th>
-            <th>IGroup</th>
-            <th>IField</th>
-            <th>IValue</th>
-          </tr>
-        {{#Report}}
-          <tr>
-            <td>{{INum}}</td>
-            <td>{{IPage}}</td>
-            <td>{{IGroup}}</td>
-            <td>{{IField}}</td>
-            <td>{{IValue}}</td>
-          </tr>
-          {{/Report}}
-          </table>
-  </body>
+  <!-- import jquery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- import the webpage's client-side javascript file -->
+  <script href="/client.js" defer></script>
+</head>
+
+<body>
+  <h1>JMU CSM</h1>
+
+  <h2>Get Info</h2>
+  <div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">Hardware</button>
+    <div id="myDropdown" class="dropdown-content">
+      {{#Names}}
+      <form method="POST" action="/hardware">
+        <input type="submit" name="submit" value={{RHost}}>
+        </form>
+      {{/Names}}
+    </div>
+  </div>
+
+  <div class="dropdown2">
+    <button onclick="myFunction()" class="dropbtn2">Software</button>
+    <div id="myDropdown2" class="dropdown-content2">
+      {{#Names}}
+      <form method="POST" action="/software">
+        <input type="submit" name="submit" value={{RHost}}>
+        </form>
+      {{/Names}}
+    </div>
+  </div>
+
+  <script>
+    /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+      document.getElementById("myDropdown2").classList.toggle("show");
+    }
+
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function (event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+
+      if (!event.target.matches('.dropbtn2')) {
+        var dropdowns2 = document.getElementsByClassName("dropdown-content2");
+        var i;
+        for (i = 0; i < dropdowns2.length; i++) {
+          var openDropdown2 = dropdowns2[i];
+          if (openDropdown2.classList.contains('show')) {
+            openDropdown2.classList.remove('show');
+          }
+        }
+      }
+    }
+  </script>
+
+<h2>PC Track Form</h2>
+</body>
+
 </html>
