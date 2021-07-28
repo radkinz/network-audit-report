@@ -1,6 +1,6 @@
-ReportProfile="SWPages"
+ReportProfile="HWPages"
 ProfileFile=""
-ReportFormat="ado"
+ReportFormat="htm"
 RemoteReportFolder="\\csma31.csm.jmu.edu\Common\Adkinsrm\networkAudit\Reports"
 RemoteReportFileName="$HOSTNAME"
 InfoPage="Computer;Summary"
