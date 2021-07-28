@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const http = require("http").Server(app);
-const port = 3000;
 const bodyParser = require("body-parser");
 
 //access the access database
@@ -49,6 +48,6 @@ app.post
     }).catch(err => console.log(err))
 })
 
-const listener = http.listen(port, () => {
-    console.log("Your app is listening on port " + port);
+const listener = http.listen(3000, () => {
+    console.log("Your app is listening on port " + 3000);
 });
