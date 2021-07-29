@@ -22,7 +22,24 @@ app.get('/', (req, res) => {
     conn.query("SELECT DISTINCT Report.RHost FROM Report;").then(data => {
         console.log(data)
         res.render("index.html", {Names: data});
-    }).catch(err => console.log(err))
+    }).catch(err => console.log(err));
+})
+
+//pc track page
+app.get('/pctrack', (req, res) => {
+    res.sendFile(__dirname + "/views/pctrack.html");
+})
+
+//return serial nunmber to client for pc track form
+app.post('/serialnumber', (req, res) => {
+    let computer_name = req.body.computername;
+    console.log(computer_name)
+    conn.query("SELECT DISTINCT Item.IField, Item.IValue, Report.RHost FROM Item INNER JOIN Report ON Report.ID = Item.ReportID WHERE Report.RHost='" + computer_name + "'AND ((((Item.ReportID)=Report.ID) AND ((Item.IID)=2572))); ").then(data => {
+        console.log(data)
+    }).catch(err => console.log(err));
+    
+    //go back to homepage
+    res.redirect("/")
 })
 
 //display hardware
@@ -32,9 +49,9 @@ app.post
     //do not need to worry about sql injection because user cannot type in the input
     var sql = "SELECT Item.IField, Item.IValue, Report.RHost FROM Item INNER JOIN Report ON Report.ID = Item.ReportID WHERE Report.RHost='" + req.body.submit + "'AND ((((Item.ReportID)=Report.ID) AND ((Item.IID)=261)) OR (((Item.IID)=263)) OR (((Item.IID)=517)) OR (((Item.IID)=518)) OR (((Item.IID)=520)) OR (((Item.IID)=530)) OR (((Item.IID)=3864)));" 
     conn.query(sql).then(data => {
-        console.log(data)
+        console.log(data);
         res.render("display.html", {Report: data});
-    }).catch(err => console.log(err))
+    }).catch(err => console.log(err));
 })
 
 //display software
@@ -43,9 +60,9 @@ app.post
     //do not need to worry about sql injection because user cannot type in the input
     var sql = "SELECT DISTINCT Report.RHost, Item.IField, Item.IValue FROM Report INNER JOIN Item ON Report.ID = Item.ReportID WHERE Report.RHost='" + req.body.submit + "'AND ((((Item.ReportID)=Report.ID) And ((Item.IID)=538)) Or (((Item.IID)=539)) Or (((Item.IID)=2581)) Or (((Item.IID)=518)) Or (((Item.IID)=520)) Or (((Item.IID)=528)) Or (((Item.IID)=530)) Or (((Item.IID)=1028)) Or (((Item.IID)=514)) Or (((Item.IID)=2583)) Or (((Item.IID)=534)) Or (((Item.IID)=517)) Or (((Item.IID)=3845)) Or (((Item.IID)=3847)) Or (((Item.IID)=540)) Or (((Item.IID)=3859)) Or (((Item.IID)=3864)) Or (((Item.IID)=2306)) Or (((Item.IID)=523)) Or (((Item.IID)=524)) Or (((Item.IID)=526)));";
     conn.query(sql).then(data => {
-        console.log(data)
+        console.log(data);
         res.render("display.html", {Report: data});
-    }).catch(err => console.log(err))
+    }).catch(err => console.log(err));
 })
 
 const listener = http.listen(3000, () => {
