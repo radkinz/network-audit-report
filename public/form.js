@@ -15,7 +15,6 @@ navigator.sayswho = (function () {
     return M.join(' ');
 })();
 
-console.log(navigator.sayswho); // outputs: `Chrome 62`
 //add browser input value
 $('[name="Browser"]').attr('value', navigator.sayswho);
 
@@ -139,7 +138,7 @@ for (let i = 0; i < dropdowntag.length; i++) {
     dropdowntag[i].onclick = function(event) {
         var target = event.target || event.srcElement;
 
-        $('[name="Building"]').html(target.innerHTML);
+        $('[name="Building"]').attr("value", target.innerHTML);
     }
 }
 
@@ -150,7 +149,7 @@ for (let i = 0; i < dropdowntag.length; i++) {
     dropdowntag[i].onclick = function(event) {
         var target = event.target || event.srcElement;
     
-        $('[name="Department"]').html(target.innerHTML);
+        $('[name="Department"]').attr("value", target.innerHTML);
     }
 }
 
@@ -161,7 +160,7 @@ for (let i = 0; i < dropdowntag.length; i++) {
     dropdowntag[i].onclick = function(event) {
         var target = event.target || event.srcElement;
     
-        $('[name="Room"]').html(target.innerHTML);
+        $('[name="Room"]').attr("value", target.innerHTML);
     }
 }
 
@@ -172,7 +171,7 @@ for (let i = 0; i < dropdowntag.length; i++) {
     dropdowntag[i].onclick = function(event) {
         var target = event.target || event.srcElement;
     
-        $('[name="Function"]').html(target.innerHTML);
+        $('[name="Function"]').attr("value", target.innerHTML);
     }
 }
 
@@ -183,7 +182,7 @@ for (let i = 0; i < dropdowntag.length; i++) {
     dropdowntag[i].onclick = function(event) {
         var target = event.target || event.srcElement;
     
-        $('[name="Instrument"]').html(target.innerHTML);
+        $('[name="Instrument"]').attr("value", target.innerHTML);
     }
 }
 
@@ -194,12 +193,14 @@ for (let i = 0; i < dropdowntag.length; i++) {
     dropdowntag[i].onclick = function(event) {
         var target = event.target || event.srcElement;
     
-        $('[name="Orientation"]').html(target.innerHTML);
+        $('[name="Orientation"]').attr("value", target.innerHTML);
     }
 }
 
 //check form
 function validateForm() {
-    console.log("yooo")
-    return false;
+    if ($('[name="Building"]').html() == "Click Here to Choose" || $('[name="Department"]').html() == "Click Here to Choose" || $('[name="Room"]').html() == "Click Here to Choose" || $('[name="Function"]').html() == "Click Here to Choose" || $('[name="Instrument"]').html() == "Click Here to Choose" || $('[name="Orientation"]').html() == "Click Here to Choose") {
+        alert("Please Fill Out the Entire Form Before Submitting")
+        return false;
+    }
 }
