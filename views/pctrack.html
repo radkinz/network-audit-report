@@ -21,22 +21,22 @@
 <body>
     <h1>JMU CSM</h1>
 
-    <form method="POST" onsubmit="return validateForm()" action="/serialnumber">
+    <form method="POST" onsubmit="return validateForm()" action="/pctrackpost">
         <label>Username</label>
-        <input name="username">
+        <input name="username" required>
         <br><br>
         <label>Computer Name</label>
-        <input name="computername">
+        <input name="computername" required>
         <br><br>
         <label>Serial Number</label>
-        <input name="serialnumber">
+        <input name="serialnumber" required>
         <br><br>
         <label>ESN Number</label>
-        <input name="ESNNumber">
+        <input name="ESNNumber" required>
         <br><br>
         <label>Building</label>
         <div class="dropdown">
-            <button type="button" onclick="myFunction()" name="Building" class="dropbtn">Click Here to Choose</button>
+            <input onclick="myFunction()" name="Building" class="dropbtn" value="Click Here to Choose" readonly>
             <div id="myDropdown" class="dropdown-content">
                 <p class="content">PCB</p>
                 <p class="content">BIO</p>
@@ -51,8 +51,7 @@
         <br><br>
         <label>Department</label>
         <div class="dropdown2">
-            <button type="button" onclick="myFunction2()" name="Department" class="dropbtn2">Click Here to
-                Choose</button>
+            <input onclick="myFunction2()" name="Department" class="dropbtn2" value="Click Here to Choose" readonly>
             <div id="myDropdown2" class="dropdown-content2">
                 <p class="content2">CHEM</p>
                 <p class="content2">PHYS</p>
@@ -65,8 +64,7 @@
         <br><br>
         <label>Room</label>
         <div class="dropdown3">
-            <button type="button" onclick="myFunction3()" name="Room" class="dropbtn3">Click Here to
-                Choose</button>
+            <input onclick="myFunction3()" name="Room" class="dropbtn3" value="Click Here to Choose" readonly>
             <div id="myDropdown3" class="dropdown-content3">
                 <p class="content3">MDS 1061</p>
                 <p class="content3">MDS 1060</p>
@@ -120,6 +118,7 @@
                 <p class="content3">PCB 1186A</p>
                 <p class="content3">PCB 0124</p>
                 <p class="content3">PCB 1120</p>
+                <p class="content3">PCB 1310</p>
                 <p class="content3">EnGeo 3142</p>
                 <p class="content3">EnGeo 3145</p>
                 <p class="content3">EnGeo 3104</p>
@@ -140,8 +139,7 @@
         <br><br>
         <label>Function</label>
         <div class="dropdown4">
-            <button type="button" onclick="myFunction4()" name="Function" class="dropbtn4">Click Here to
-                Choose</button>
+            <input onclick="myFunction4()" name="Function" class="dropbtn4" value="Click Here to Choose" readonly>
             <div id="myDropdown4" class="dropdown-content4">
                 <p class="content4">Windows Computer Lab Workstation</p>
                 <p class="content4">Windows Office Workstation</p>
@@ -156,8 +154,7 @@
         <br><br>
         <label>Instrument</label>
         <div class="dropdown5">
-            <button type="button" onclick="myFunction5()" name="Instrument" class="dropbtn5">Click Here to
-                Choose</button>
+            <input onclick="myFunction5()" name="Instrument" class="dropbtn5" value="Click Here to Choose" readonly>
             <div id="myDropdown5" class="dropdown-content5">
                 <p class="content5">Without Instrument</p>
                 <p class="content5">Gas Chromatograph</p>
@@ -191,8 +188,7 @@
         <br><br>
         <label>Orientation</label>
         <div class="dropdown6">
-            <button type="button" onclick="myFunction6()" name="Orientation" class="dropbtn6">Click Here to
-                Choose</button>
+            <input onclick="myFunction6()" name="Orientation" class="dropbtn6" value="Click Here to Choose" readonly>
             <div id="myDropdown6" class="dropdown-content6">
                 <p class="content6">East Wall</p>
                 <p class="content6">West Wall</p>
@@ -202,10 +198,10 @@
         </div>
         <br><br>
         <label>Browser</label>
-        <input name="Browser">
+        <input name="Browser" required>
         <br><br>
         <label>Timestamp</label>
-        <input name="Timestamp">
+        <input name="Timestamp" required>
         <br><br>
         <input name="submit" type="submit" value="submit">
     </form>
