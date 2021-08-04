@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Datbase Dump</title>
+  <title>JMU CSM Tech Support</title>
 
   <!-- import the webpage's stylesheet -->
   <link rel="stylesheet" href="/style.css" />
@@ -18,46 +18,72 @@
   <script type="text/javascript" src="/client.js" defer></script>
 </head>
 
-<body>
-  <h1>JMU CSM</h1>
+<body class="body-for-sticky">
+  <header class="headercontainer">
+    <img src="/images/jmuheader.jpg" class="headerimg">
+  </header>
 
-  <h2>Get Info</h2>
-  <div id = "dropdowncontainer">
-  <div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn">Hardware</button>
-    <div id="myDropdown" class="dropdown-content">
-      {{#Names}}
-      <form method="POST" action="/hardware">
-        <input type="submit" name="submit" value={{RHost}}>
+  <main>
+    <h1>JMU CSM Support</h1>
+
+    <h2>Get Info By Computer</h2>
+    <div class="buttoncontainer">
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Hardware</button>
+        <div id="myDropdown" class="dropdown-content">
+          {{#Names}}
+          <form method="POST" action="/hardware">
+            <input type="submit" name="submit" value={{RHost}}>
+          </form>
+          {{/Names}}
+        </div>
+      </div>
+
+      <div class="dropdown2">
+        <button onclick="myFunction2()" class="dropbtn2">PC Track Info</button>
+        <div id="myDropdown2" class="dropdown-content2">
+          {{#Names}}
+          <form method="POST" action="/pctrackinfo">
+            <input type="submit" name="submit" value={{RHost}}>
+          </form>
+          {{/Names}}
+        </div>
+      </div>
+
+      <div class="dropdown3">
+        <button onclick="myFunction3()" class="dropbtn3">Software</button>
+        <div id="myDropdown3" class="dropdown-content3">
+          {{#Names}}
+          <form method="POST" action="/software">
+            <input type="submit" name="submit" value={{RHost}}>
+          </form>
+          {{/Names}}
+        </div>
+      </div>
+    </div>
+
+    <h2>Other Info</h2>
+
+    <div class="buttoncontainer">
+      <div class="infobutton">
+        <form method="POST" action="/printerinfo">
+          <input type="submit" id="printerbutton" name="submit" value="Get Printer Info">
         </form>
-      {{/Names}}
-    </div>
-  </div>
+      </div>
 
-  <div class="dropdown2">
-    <button onclick="myFunction2()" class="dropbtn2">Software</button>
-    <div id="myDropdown2" class="dropdown-content2">
-      {{#Names}}
-      <form method="POST" action="/software">
-        <input type="submit" name="submit" value={{RHost}}>
+      <div class="infobutton">
+        <form method="POST" action="/softwarecount">
+          <input type="submit" id="printerbutton" name="submit" value="Get Software Count">
         </form>
-      {{/Names}}
+      </div>
     </div>
-  </div>
 
-  <div class="dropdown3">
-    <button onclick="myFunction3()" class="dropbtn3">PC Track Info</button>
-    <div id="myDropdown3" class="dropdown-content3">
-      {{#Names}}
-      <form method="POST" action="/pctrackinfo">
-        <input type="submit" name="submit" value={{RHost}}>
-        </form>
-      {{/Names}}
-    </div>
-    </div>
-  </div>
+    <h2><a href="/pctrack">PC Track Form</a></h2>
+  </main>
 
-<h2><a href="/pctrack">PC Track Form</a></h2>
+  <div class="footer sticky-footer">
+    <img src=/images/jm_logo.gif>
+  </div>
 </body>
 
 </html>
