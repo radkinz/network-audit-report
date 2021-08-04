@@ -18,8 +18,11 @@
     <script type="text/javascript" src="/form.js" defer></script>
 </head>
 
-<body>
-    <h1>JMU CSM</h1>
+<body class="body-for-sticky">
+    <div class="headercontainer">
+        <img src="/images/jmuheader.jpg" class="headerimg">
+    </div>
+    <h1>JMU CSM PC Inventory Form</h1>
 
     <form method="POST" onsubmit="return validateForm()" action="/pctrackpost">
         <label>Username</label>
@@ -205,6 +208,10 @@
         <br><br>
         <input name="submit" type="submit" value="submit">
     </form>
+
+    <div class="footer sticky-footer">
+        <img src=/images/jm_logo.gif>
+    </div>
 </body>
 
 </html>
