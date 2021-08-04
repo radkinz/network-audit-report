@@ -199,7 +199,7 @@ for (let i = 0; i < dropdowntag.length; i++) {
 
 //check form
 function validateForm() {
-    if ($('[name="Building"]').html() == "Click Here to Choose" || $('[name="Department"]').html() == "Click Here to Choose" || $('[name="Room"]').html() == "Click Here to Choose" || $('[name="Function"]').html() == "Click Here to Choose" || $('[name="Instrument"]').html() == "Click Here to Choose" || $('[name="Orientation"]').html() == "Click Here to Choose") {
+    if ($('[name="Building"]').attr("value") == "Click Here to Choose" || $('[name="Department"]').attr("value") == "Click Here to Choose" || $('[name="Room"]').attr("value") == "Click Here to Choose" || $('[name="Function"]').attr("value") == "Click Here to Choose" || $('[name="Instrument"]').attr("value") == "Click Here to Choose" || $('[name="Orientation"]').attr("value") == "Click Here to Choose") {
         alert("Please Fill Out the Entire Form Before Submitting")
         return false;
     }
