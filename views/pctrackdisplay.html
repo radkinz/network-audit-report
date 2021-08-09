@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Computer Information</title>
+
+  <!-- import the webpage's stylesheet -->
+  <link rel="stylesheet" href="/style.css" />
+
+  <!-- import jquery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- import the webpage's client-side javascript file -->
+  <script type="text/javascript" src="/client.js" defer></script>
+</head>
+
+<body class="body-for-sticky">
+  <div class="headercontainer">
+    <img src="/images/jmuheader.jpg" class="headerimg">
+  </div>
+  <h1>PC Track Data</h1>
+
+  <div class="tablecontainer">
+    <table style="width:100%" id="databaseInfo">
+      <tr>
+        <th>Computer Name</th>
+        <th>Serial Number</th>
+        <th>ESN Number</th>
+        <th>Building</th>
+        <th>Department</th>
+        <th>Room</th>
+        <th>Remote Computer Name</th>
+        <th>Function</th>
+        <th>Instrument</th>
+        <th>Orientation</th>
+        <th>Browser</th>
+      </tr>
+      {{#Report}}
+      <tr>
+        <td>{{ComputerName}}</td>
+        <td>{{SerialNumber}}</td>
+        <td>{{ESNNumber}}</td>
+        <td>{{Building}}</td>
+        <td>{{Department}}</td>
+        <td>{{Room}}</td>
+        <td>{{RemoteComputerName}}</td>
+        <td>{{Function}}</td>
+        <td>{{Instrument}}</td>
+        <td>{{Orientation}}</td>
+        <td>{{Browser}}</td>
+      </tr>
+      {{/Report}}
+    </table>
+  </div>
+  <div class="footer sticky-footer">
+    <img src=/images/jm_logo.gif>
+  </div>
+</body>
+
+</html>

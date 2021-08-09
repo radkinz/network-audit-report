@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Computer Information</title>
+
+  <!-- import the webpage's stylesheet -->
+  <link rel="stylesheet" href="/style.css" />
+
+  <!-- import jquery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- import the webpage's client-side javascript file -->
+  <script type="text/javascript" src="/client.js" defer></script>
+</head>
+
+<body class="body-for-sticky">
+  <div class="headercontainer">
+    <img src="/images/jmuheader.jpg" class="headerimg">
+  </div>
+  <h1>Printer Data</h1>
+
+  <div class="tablecontainer">
+    <table style="width:100%" id="databaseInfo">
+      <tr>
+        <th>IField</th>
+        <th>IValue</th>
+        <th>IDevice</th>
+        <th>IID</th>
+        <th>Computer Name</th>
+      </tr>
+      {{#Report}}
+      <tr>
+        <td>{{IField}}</td>
+        <td>{{IValue}}</td>
+        <td>{{IDevice}}</td>
+        <td>{{IID}}</td>
+        <td>{{RHost}}</td>
+      </tr>
+      {{/Report}}
+    </table>
+  </div>
+
+  <div class="footer sticky-footer">
+    <img src=/images/jm_logo.gif>
+  </div>
+</body>
+
+</html>

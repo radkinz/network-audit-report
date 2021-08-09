@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>PC Track Form</title>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/form.css" />
+
+    <!-- import jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- import the webpage's client-side javascript file -->
+    <script type="text/javascript" src="/form.js" defer></script>
+</head>
+
+<body class="body-for-sticky">
+    <div class="headercontainer">
+        <img src="/images/jmuheader.jpg" class="headerimg">
+    </div>
+    <h1>JMU CSM PC Inventory Form</h1>
+
+    <form method="POST" onsubmit="return validateForm()" action="/pctrackpost">
+        <label>Username</label>
+        <input name="username" required>
+        <br><br>
+        <label>Computer Name</label>
+        <input name="computername" required>
+        <br><br>
+        <label>Serial Number</label>
+        <input name="serialnumber" required>
+        <br><br>
+        <label>ESN Number</label>
+        <input name="ESNNumber" required>
+        <br><br>
+        <label>Building</label>
+        <div class="dropdown">
+            <input onclick="myFunction()" name="Building" class="dropbtn" value="Click Here to Choose" readonly>
+            <div id="myDropdown" class="dropdown-content">
+                <p class="content">PCB</p>
+                <p class="content">BIO</p>
+                <p class="content">BURR</p>
+                <p class="content">EnGeo</p>
+                <p class="content">MILL</p>
+                <p class="content">MALL</p>
+                <p class="content">SSC</p>
+                <p class="content">MDS</p>
+            </div>
+        </div>
+        <br><br>
+        <label>Department</label>
+        <div class="dropdown2">
+            <input onclick="myFunction2()" name="Department" class="dropbtn2" value="Click Here to Choose" readonly>
+            <div id="myDropdown2" class="dropdown-content2">
+                <p class="content2">CHEM</p>
+                <p class="content2">PHYS</p>
+                <p class="content2">GEO</p>
+                <p class="content2">BIO</p>
+                <p class="content2">MATH</p>
+                <p class="content2">ISAT</p>
+            </div>
+        </div>
+        <br><br>
+        <label>Room</label>
+        <div class="dropdown3">
+            <input onclick="myFunction3()" name="Room" class="dropbtn3" value="Click Here to Choose" readonly>
+            <div id="myDropdown3" class="dropdown-content3">
+                <p class="content3">MDS 1061</p>
+                <p class="content3">MDS 1060</p>
+                <p class="content3">PCB 1162</p>
+                <p class="content3">PCB 1154</p>
+                <p class="content3">PCB 2182</p>
+                <p class="content3">PCB 2124</p>
+                <p class="content3">PCB 2128</p>
+                <p class="content3">PCB 2166</p>
+                <p class="content3">PCB 2178</p>
+                <p class="content3">PCB 2186A</p>
+                <p class="content3">PCB 2310</p>
+                <p class="content3">PCB 2132</p>
+                <p class="content3">PCB 1166</p>
+                <p class="content3">PCB 2154</p>
+                <p class="content3">PCB 2170</p>
+                <p class="content3">PCB 2174</p>
+                <p class="content3">PCB 2158</p>
+                <p class="content3">PCB 1158</p>
+                <p class="content3">PCB 2162</p>
+                <p class="content3">PCB 2354C</p>
+                <p class="content3">PCB 2186</p>
+                <p class="content3">PCB 3128</p>
+                <p class="content3">PCB 2120</p>
+                <p class="content3">PCB 1178</p>
+                <p class="content3">PCB 0132</p>
+                <p class="content3">PCB 3120</p>
+                <p class="content3">PCB 3174</p>
+                <p class="content3">PCB 3166</p>
+                <p class="content3">PCB 3124</p>
+                <p class="content3">PCB 3170</p>
+                <p class="content3">PCB 1124</p>
+                <p class="content3">PCB 2354C</p>
+                <p class="content3">PCB 1124</p>
+                <p class="content3">PCB 1128</p>
+                <p class="content3">PCB 3140</p>
+                <p class="content3">PCB 3158</p>
+                <p class="content3">PCB 3178</p>
+                <p class="content3">PCB 3182</p>
+                <p class="content3">PCB 3162</p>
+                <p class="content3">PCB 3136</p>
+                <p class="content3">PCB 1186</p>
+                <p class="content3">PCB 1182</p>
+                <p class="content3">PCB 1174</p>
+                <p class="content3">PCB 1132</p>
+                <p class="content3">PCB 1170</p>
+                <p class="content3">PCB 0120</p>
+                <p class="content3">PCB 3132</p>
+                <p class="content3">PCB 3184</p>
+                <p class="content3">PCB 1362A</p>
+                <p class="content3">PCB 1186A</p>
+                <p class="content3">PCB 0124</p>
+                <p class="content3">PCB 1120</p>
+                <p class="content3">PCB 1310</p>
+                <p class="content3">EnGeo 3142</p>
+                <p class="content3">EnGeo 3145</p>
+                <p class="content3">EnGeo 3104</p>
+                <p class="content3">EnGeo 3140</p>
+                <p class="content3">EnGeo 3143B</p>
+                <p class="content3">EnGeo 3139</p>
+                <p class="content3">EnGeo 3138</p>
+                <p class="content3">EnGeo 0004C</p>
+                <p class="content3">EnGeo 3126</p>
+                <p class="content3">BIO 3016B</p>
+                <p class="content3">BIO 3028H</p>
+                <p class="content3">SSC 1110</p>
+            </div>
+        </div>
+        <br><br>
+        <label>Remote Computer Name</label>
+        <input name="RemoteComputerName">
+        <br><br>
+        <label>Function</label>
+        <div class="dropdown4">
+            <input onclick="myFunction4()" name="Function" class="dropbtn4" value="Click Here to Choose" readonly>
+            <div id="myDropdown4" class="dropdown-content4">
+                <p class="content4">Windows Computer Lab Workstation</p>
+                <p class="content4">Windows Office Workstation</p>
+                <p class="content4">Windows Research Lab Workstation</p>
+                <p class="content4">Linux Computer Lab Workstation</p>
+                <p class="content4">Linux Office Workstation</p>
+                <p class="content4">Linux Research Lab Workstation</p>
+                <p class="content4">Instrumentation Workstation</p>
+                <p class="content4">Multi Functional Computer</p>
+            </div>
+        </div>
+        <br><br>
+        <label>Instrument</label>
+        <div class="dropdown5">
+            <input onclick="myFunction5()" name="Instrument" class="dropbtn5" value="Click Here to Choose" readonly>
+            <div id="myDropdown5" class="dropdown-content5">
+                <p class="content5">Without Instrument</p>
+                <p class="content5">Gas Chromatograph</p>
+                <p class="content5">Vernier LabPro</p>
+                <p class="content5">Winston Shiflet Office Workstation - OptiPlex 755</p>
+                <p class="content5">Bruker Alpha-T</p>
+                <p class="content5">Agilent Technologies Mass Selective Detector</p>
+                <p class="content5">UV-Visible Spectrophotometer</p>
+                <p class="content5">Spec Fluorometer</p>
+                <p class="content5">Thermo AS3000</p>
+                <p class="content5">NIMA Micro-Processor Interface IU4</p>
+                <p class="content5">HS-190 Monochromator System</p>
+                <p class="content5">X-Cite 120 and Nikon Eclipse ME600</p>
+                <p class="content5">Smartboard and Wolfvision VZ-8light</p>
+                <p class="content5">Wolfvision VZ-8light</p>
+                <p class="content5">Inspect IR Plus</p>
+                <p class="content5">NanoScope III Scanning Probe Microscope controller</p>
+                <p class="content5">Nikon Eclipse L150</p>
+                <p class="content5">LEICA MZ6</p>
+                <p class="content5">Nikon Eclipse TE2000-S</p>
+                <p class="content5">Varian CP-3800 Gas Chromomatograph</p>
+                <p class="content5">Tektronix TDS 2014</p>
+                <p class="content5">Materials Laser Cutter</p>
+                <p class="content5">Mettler toledo DSC822e</p>
+                <p class="content5">Keithley 2000 Multimeter</p>
+                <p class="content5">CSM 1310 Admin Workstation</p>
+                <p class="content5">Plate Scanner Workstation</p>
+                <p class="content5">Chemical Stockroom Workstation 332</p>
+            </div>
+        </div>
+        <br><br>
+        <label>Orientation</label>
+        <div class="dropdown6">
+            <input onclick="myFunction6()" name="Orientation" class="dropbtn6" value="Click Here to Choose" readonly>
+            <div id="myDropdown6" class="dropdown-content6">
+                <p class="content6">East Wall</p>
+                <p class="content6">West Wall</p>
+                <p class="content6">North Wall</p>
+                <p class="content6">South Wall</p>
+            </div>
+        </div>
+        <br><br>
+        <label>Browser</label>
+        <input name="Browser" required>
+        <br><br>
+        <label>Timestamp</label>
+        <input name="Timestamp" required>
+        <br><br>
+        <input name="submit" type="submit" value="submit">
+    </form>
+
+    <div class="footer sticky-footer">
+        <img src=/images/jm_logo.gif>
+    </div>
+</body>
+
+</html>
