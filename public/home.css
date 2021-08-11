@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+html {
+  font-family: 'Inter', sans-serif;
+  height: 100%;              /* for the page to take full window height */
+  box-sizing: border-box;    /* to have the footer displayed at the bottom of the page without scrolling */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* style titles */
+h1 {
+  text-align: center;
+  font-weight: 800;
+  font-size: 300%;
+}
+
+h2 {
+  text-align: center;
+}
+
+/* style header */
+.headerimg {
+  width: 100%;
+  margin: 0;
+  top: 0;
+  left: 0;
+  max-height: 200px;
+}
+
+/* style footer */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;       /* enable the "border-box effect" everywhere */
+}
+
+.body-for-sticky {
+  position: relative;        /* for the footer to move with the page size */
+  min-height: 100%;          /* for the footer to be at the bottom */
+  padding-bottom: 6rem;      /* Space available between last element and bottom border of the page */
+}
+
+.sticky-footer {
+  position: absolute;        /* for it to disappear under last body element */
+  bottom: 0;                 /* so the footer can stick to the bottom*/
+  margin-top: 100px;
+}
+
+.footer {
+  width: 100%;
+  background-color: #E8E8CD;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 1rem;
+}
+
+/* style navbar */
+.navbar {
+  background-color: #E8E8CD;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  margin-top: -10px;
+}
+
+.navbar div {
+  text-align: center;
+}
+
+.links {
+    width: 40%;
+}
+
+/* style layout */
+.centertd {
+  text-align: center;
+  width: 50%;
+}
+
+.lefttd, .righttd {
+    width: 25%;
+}
+
+.righttd {
+    text-align: center;
+}
+
+.admintools {
+  background-color: #D9D9D9;
+  border-radius: 5px;
+}
+
+.admintools a {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* style table */
+.tablecontainer {
+  min-width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+  
+td, th {
+  text-align: left;
+  padding: 8px;
+}
+  
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
