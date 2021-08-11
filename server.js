@@ -20,9 +20,22 @@ const conn = ADODB.open(process.env.DATABASE_PATH);
 
 //home page 
 app.get('/', (req, res) => {
+    res.sendFile(__dirname + "/views/index.html");
+})
+
+//search aida database home page
+app.get('/SearchAida', (req, res) => {
     conn.query("SELECT DISTINCT Report.RHost FROM Report;").then(data => {
         console.log(data)
-        res.render("index.html", { Names: data });
+        res.render("searchAida.html", { Names: data });
+    }).catch(err => console.log(err));
+})
+
+//search pctrack database home page
+app.get('/SearchPcTrack', (req, res) => {
+    conn.query("SELECT DISTINCT Report.RHost FROM Report;").then(data => {
+        console.log(data)
+        res.render("searchAida.html", { Names: data });
     }).catch(err => console.log(err));
 })
 
