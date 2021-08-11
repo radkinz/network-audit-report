@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>JMU CSM Tech Support</title>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- import jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- import the webpage's client-side javascript file -->
+    <script type="text/javascript" src="/client.js" defer></script>
+</head>
+
+<body class="body-for-sticky">
+    <header class="headercontainer">
+        <img src="/images/jmuheader.jpg" class="headerimg">
+    </header>
+
+    <div class="navbar">
+        <!-- links for navbar -->
+        <div class="links">
+            <a href="https://webmail.jmu.edu">JMU Web Mail </a>|
+            <a href="http://www.jmu.edu">JMU Home</a> | <a href="http://ecampus.jmu.edu/">E-Campus&nbsp;</a>
+        </div>
+
+        <!-- csm img -->
+        <div>
+            <img src="/images/logoBeige.jpg">
+        </div>
+
+        <!-- links for navbar -->
+        <div class="links">
+            <a href="https://www.jmu.edu/csm/">CSM </a>|<a href="#">Weather
+            </a>|<a href="https://www.jmu.edu/map/">Site map</a>
+            | <a href="#">FAQ</a> |<a href="https://www.jmu.edu/chemistry/people/all-people/staff/shiflet-winston.shtml">Contact Us
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <h1>JMU CSM Tech Support</h1>
+
+        <h2>Get Info By Computer</h2>
+        <div class="buttoncontainer">
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">Hardware</button>
+                <div id="myDropdown" class="dropdown-content">
+                    {{#Names}}
+                    <form method="POST" action="/hardware">
+                        <input type="submit" name="submit" value={{RHost}}>
+                    </form>
+                    {{/Names}}
+                </div>
+            </div>
+
+            <div class="dropdown3">
+                <button onclick="myFunction3()" class="dropbtn3">Software</button>
+                <div id="myDropdown3" class="dropdown-content3">
+                    {{#Names}}
+                    <form method="POST" action="/software">
+                        <input type="submit" name="submit" value={{RHost}}>
+                    </form>
+                    {{/Names}}
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="footer sticky-footer">
+        <img src="/images/jm_logo.gif">
+    </div>
+</body>
+
+</html>
