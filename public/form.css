@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 html {
+  font-family: 'Inter', sans-serif;
   height: 100%;              /* for the page to take full window height */
   box-sizing: border-box;    /* to have the footer displayed at the bottom of the page without scrolling */
 }
@@ -16,7 +19,6 @@ body {
   left: 0;
   max-height: 200px;
 }
-
 
 /* style footer */
 *,
@@ -39,11 +41,32 @@ body {
 
 .footer {
   width: 100%;
-  background-color: rgb(235, 221, 155);
+  background-color: #E8E8CD;
   display: flex;
   justify-content: center;
   margin-top: 20px;
   padding: 1rem;
+}
+
+/* style navbar */
+.navbar {
+  background-color: #E8E8CD;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  margin-top: -10px;
+}
+
+.navbar div {
+  flex-grow: 3;
+  text-align: center;
+}
+
+.links {
+  width: 40%;
 }
 
 h1, form {
