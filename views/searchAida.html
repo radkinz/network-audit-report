@@ -9,7 +9,7 @@
     <title>JMU CSM Tech Support</title>
 
     <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/home.css" />
 
     <!-- import jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -39,38 +39,74 @@
         <div class="links">
             <a href="https://www.jmu.edu/csm/">CSM </a>|<a href="#">Weather
             </a>|<a href="https://www.jmu.edu/map/">Site map</a>
-            | <a href="#">FAQ</a> |<a href="https://www.jmu.edu/chemistry/people/all-people/staff/shiflet-winston.shtml">Contact Us
+            | <a href="#">FAQ</a> |<a
+                href="https://www.jmu.edu/chemistry/people/all-people/staff/shiflet-winston.shtml">Contact Us
             </a>
         </div>
     </div>
 
     <main>
-        <h1>JMU CSM Tech Support</h1>
-
-        <h2>Get Info By Computer</h2>
-        <div class="buttoncontainer">
-            <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn">Hardware</button>
-                <div id="myDropdown" class="dropdown-content">
-                    {{#Names}}
-                    <form method="POST" action="/hardware">
-                        <input type="submit" name="submit" value={{RHost}}>
-                    </form>
-                    {{/Names}}
+        <table class="maintable">
+            <td class="lefttd">
+                <div class="admintools">
+                    <div style="background-color:#7F91A5; color: white;">
+                        <h3 style="padding: 5px;">
+                            Admin Tools
+                        </h3>
+                    </div>
+                    <div style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px;">
+                        <a href="/SearchAida">Search Aida64 Database</a> <br><br>
+                        <a href="/SearchPcTrack">Search PC Track Database</a> <br><br>
+                        <a href="/pctrack">PC Track Form</a>
+                    </div>
                 </div>
-            </div>
 
-            <div class="dropdown3">
-                <button onclick="myFunction3()" class="dropbtn3">Software</button>
-                <div id="myDropdown3" class="dropdown-content3">
-                    {{#Names}}
-                    <form method="POST" action="/software">
-                        <input type="submit" name="submit" value={{RHost}}>
-                    </form>
-                    {{/Names}}
+                <div class="admintools">
+                    <div style="background-color:#7F91A5; color: white;">
+                        <h3 style="padding: 5px;">
+                            Today's Hot Tip
+                        </h3>
+                    </div>
+                    <div style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px;">
+                        <p> <img src="/images/chili.png" width="20px" style="margin:0;padding:0">Java is to JavaScript
+                            what car is to Carpet</p>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </td>
+
+            <td class="centertd">
+                <h2>Get Info By Computer</h2>
+                <div class="buttoncontainer">
+                    <div class="dropdown">
+                        <button onclick="myFunction()" class="dropbtn">Hardware</button>
+                        <div id="myDropdown" class="dropdown-content">
+                            {{#Names}}
+                            <form method="POST" action="/hardware">
+                                <input type="submit" name="submit" value={{RHost}}>
+                            </form>
+                            {{/Names}}
+                        </div>
+                    </div>
+
+                    <div class="dropdown3">
+                        <button onclick="myFunction3()" class="dropbtn3">Software</button>
+                        <div id="myDropdown3" class="dropdown-content3">
+                            {{#Names}}
+                            <form method="POST" action="/software">
+                                <input type="submit" name="submit" value={{RHost}}>
+                            </form>
+                            {{/Names}}
+                        </div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="righttd">
+                <div>
+                    <img src="/images/A3building2.jpg">
+                </div>
+            </td>
+        </table>
     </main>
 
     <div class="footer sticky-footer">
