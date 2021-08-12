@@ -33,9 +33,9 @@ app.get('/SearchAida', (req, res) => {
 
 //search pctrack database home page
 app.get('/SearchPcTrack', (req, res) => {
-    conn.query("SELECT DISTINCT Report.RHost FROM Report;").then(data => {
+    conn.query("SELECT DISTINCT PcTrack.ComputerName FROM PcTrack;").then(data => {
         console.log(data)
-        res.render("searchAida.html", { Names: data });
+        res.render("searchPcTrack.html", { Names: data });
     }).catch(err => console.log(err));
 })
 
